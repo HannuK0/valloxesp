@@ -625,12 +625,12 @@ namespace esphome {
        }
        else if (variable == VX_VARIABLE_T_INSIDE)   {
          if (this->temperature_inside_sensor_   != nullptr) { this->temperature_inside_sensor_->publish_state(ntc2Cel(value));   }
-         // Inside temperature used for climate current temperature
-         this->current_temperature = ntc2Cel(value);
-         this->publish_state();
        }
        else if (variable == VX_VARIABLE_T_INCOMING) {
          if (this->temperature_incoming_sensor_ != nullptr) { this->temperature_incoming_sensor_->publish_state(ntc2Cel(value)); }
+         // Incoming temperature used for climate current temperature
+         this->current_temperature = ntc2Cel(value);
+         this->publish_state();
        }
 
        // RH
